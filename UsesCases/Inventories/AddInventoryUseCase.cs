@@ -1,5 +1,5 @@
 using CoreBusiness;
-using Usescases.Inventories.Interfaces;
+using IMS.UseCases.Inventories.Interfaces;
 
 
 namespace IMS.UseCases.Inventories
@@ -12,6 +12,8 @@ namespace IMS.UseCases.Inventories
         {
             _inventoryRepository = inventoryRepository;
         }
+
+
 
         public async Task ExecuteAsync(Inventory inventory)
         {

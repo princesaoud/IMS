@@ -1,0 +1,42 @@
+﻿@page "/create-inventory"
+@using CoreBusiness
+@using IMS.UseCases.Inventories
+@using IMS.UseCases.Inventories.Interfaces
+
+@inject IAddInventoryUseCase AddInventoryUseCase;
+@inject NavigationManager NavigationManager;
+
+<h3>Create Inventory</h3>
+<EditForm Model="inventory" OnValidSubmit="Create" FormName="formCreateInventory">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <InputText id="name" class="form-control" @bind-Value="inventory.InventoryName" />
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price</label>
+        <InputNumber id="price" class="form-control" @bind-Value="inventory.Price" />
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <InputNumber id="quantity" class="form-control" @bind-Value="inventory.Quantity" />
+    </div>
+    <br <button type="submit" class="btn btn-primary">Create</button>
+    &nbsp;
+    <a href="/inventories" class="btn btn-secondary">Back</a>
+</EditForm>
+
+@code {
+
+    private Inventory inventory = new Inventory();
+
+    private async void Create()
+    {
+        await AddInventoryUseCase.ExecuteAsync(inventory);
+        NavigationManager.NavigateTo("/inventories");
+    }
+
+}
