@@ -9,3 +9,4 @@
 /Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/refint/CoreBusiness.dll
 /Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/CoreBusiness.pdb
 /Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/ref/CoreBusiness.dll
+/Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/CoreBusiness.sourcelink.json

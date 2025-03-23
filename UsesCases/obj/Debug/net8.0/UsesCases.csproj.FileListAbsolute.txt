@@ -13,3 +13,4 @@
 /Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/refint/UsesCases.dll
 /Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/UsesCases.pdb
 /Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/ref/UsesCases.dll
+/Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/UsesCases.sourcelink.json

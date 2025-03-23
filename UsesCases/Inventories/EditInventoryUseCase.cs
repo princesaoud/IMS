@@ -14,10 +14,10 @@ public class EditInventoryUseCase : IEditInventoryUseCase
     }
 
 
-    public void Execute(Inventory inventory)
+    public async void Execute(Inventory inventory)
     {
 
-        var inv = inventoryRepository.Get(inventory.InventoryId);
+        var inv = await inventoryRepository.Get(inventory.InventoryId);
 
         if (inv == null)
         {
@@ -26,6 +26,6 @@ public class EditInventoryUseCase : IEditInventoryUseCase
         inv.InventoryName = inventory.InventoryName;
         inv.Quantity = inventory.Quantity;
         inv.Price = inventory.Price;
-        inventoryRepository.Update(inventory);
+        await inventoryRepository.Update(inventory);
     }
 }

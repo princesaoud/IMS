@@ -16,9 +16,9 @@ public class ViewInventoriesByNameUseCase : IViewInventoriesByNameUseCase
     //     return _inventoryRepository.GetByName(name);
     // }
 
-    public Task<List<Inventory>> Execute(string name)
+    public async Task<List<Inventory>> Execute(string name)
     {
-        return Task.FromResult(_inventoryRepository.GetByName(name));
+        return await _inventoryRepository.GetByName(name);
     }
 
 

@@ -31,25 +31,24 @@ namespace IMS.Plugins.InMemory
 
         }
 
-        public List<Inventory> GetByName(string name)
+        public Task<List<Inventory>> GetByName(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                return _inventories;
+                return Task.FromResult(_inventories);
             }
-            return _inventories.Where(i => i.InventoryName.Contains(name)).ToList();
+            return Task.FromResult(_inventories.Where(i => i.InventoryName.Contains(name)).ToList());
         }
 
 
-        public Inventory Get(int id)
+        public Task<Inventory> Get(int id)
         {
             var data = _inventories.FirstOrDefault(i => i.InventoryId == id);
             if (data == null)
             {
                 throw new Exception("Inventory not found");
             }
-            return data;
-
+            return Task.FromResult(data);
         }
 
 

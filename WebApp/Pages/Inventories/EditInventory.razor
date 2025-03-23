@@ -1,9 +1,10 @@
-﻿@page "/editinventory"
+﻿@page "/editinventory/{invId:int}"
 @using CoreBusiness
 @using UsesCases.Inventories.interfaces
 
 @inject IEditInventoryUseCase EditInventoryUseCase;
 @inject NavigationManager NavigationManager;
+@inject IGetInventoryUseCase GetInventoryUseCase;
 
 <h3>Edit Inventory</h3>
 <EditForm FormName="EditInventoryForm" Model="inventory" OnValidSubmit="Edit">
@@ -27,6 +28,13 @@
 </EditForm>
 @code {
 
+
+    [Parameter]
+    public int invId { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        inventory = await GetInventoryUseCase.Execute(invId);
+    }
     private Inventory inventory = new Inventory();
 
     void Edit()
