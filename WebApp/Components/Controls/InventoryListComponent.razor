@@ -1,0 +1,33 @@
+@using CoreBusiness
+@using UsesCases.Inventories.Interfaces
+
+@inject IViewInventoriesByNameUseCase ViewInventoriesByNameUseCase
+
+@if (inventories != null && inventories.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var inventory in inventories)
+            {
+                <InventoryListItemComponent inventory="@inventory" />
+            }
+        </tbody>
+    </table>
+}
+@code {
+    private IEnumerable<Inventory>? inventories;
+
+    protected override async Task OnInitializedAsync()
+    {
+        inventories = await ViewInventoriesByNameUseCase.Execute("");
+    }
+}

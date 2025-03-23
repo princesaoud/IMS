@@ -8,7 +8,6 @@
 /Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/UsesCases.AssemblyInfoInputs.cache
 /Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/UsesCases.AssemblyInfo.cs
 /Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/UsesCases.csproj.CoreCompileInputs.cache
-/Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/UsesCases.sourcelink.json
 /Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/UsesCases.csproj.Up2Date
 /Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/UsesCases.dll
 /Users/princesaoud/web-dev/dotnet/IMS/UsesCases/obj/Debug/net8.0/refint/UsesCases.dll

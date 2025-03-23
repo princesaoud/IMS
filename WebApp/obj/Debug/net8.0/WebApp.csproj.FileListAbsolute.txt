@@ -615,7 +615,6 @@
 /Users/princesaoud/web-dev/dotnet/IMS/WebApp/obj/Debug/net8.0/WebApp.AssemblyInfo.cs
 /Users/princesaoud/web-dev/dotnet/IMS/WebApp/obj/Debug/net8.0/WebApp.csproj.CoreCompileInputs.cache
 /Users/princesaoud/web-dev/dotnet/IMS/WebApp/obj/Debug/net8.0/WebApp.MvcApplicationPartsAssemblyInfo.cache
-/Users/princesaoud/web-dev/dotnet/IMS/WebApp/obj/Debug/net8.0/WebApp.sourcelink.json
 /Users/princesaoud/web-dev/dotnet/IMS/WebApp/obj/Debug/net8.0/webcil/Microsoft.AspNetCore.Authorization.wasm
 /Users/princesaoud/web-dev/dotnet/IMS/WebApp/obj/Debug/net8.0/webcil/Microsoft.AspNetCore.Components.wasm
 /Users/princesaoud/web-dev/dotnet/IMS/WebApp/obj/Debug/net8.0/webcil/Microsoft.AspNetCore.Components.Forms.wasm

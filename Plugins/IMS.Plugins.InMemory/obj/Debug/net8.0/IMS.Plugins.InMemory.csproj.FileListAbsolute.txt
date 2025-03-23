@@ -10,7 +10,6 @@
 /Users/princesaoud/web-dev/dotnet/IMS/Plugins/IMS.Plugins.InMemory/obj/Debug/net8.0/IMS.Plugins.InMemory.AssemblyInfoInputs.cache
 /Users/princesaoud/web-dev/dotnet/IMS/Plugins/IMS.Plugins.InMemory/obj/Debug/net8.0/IMS.Plugins.InMemory.AssemblyInfo.cs
 /Users/princesaoud/web-dev/dotnet/IMS/Plugins/IMS.Plugins.InMemory/obj/Debug/net8.0/IMS.Plugins.InMemory.csproj.CoreCompileInputs.cache
-/Users/princesaoud/web-dev/dotnet/IMS/Plugins/IMS.Plugins.InMemory/obj/Debug/net8.0/IMS.Plugins.InMemory.sourcelink.json
 /Users/princesaoud/web-dev/dotnet/IMS/Plugins/IMS.Plugins.InMemory/obj/Debug/net8.0/IMS.Plug.DF2EEC9E.Up2Date
 /Users/princesaoud/web-dev/dotnet/IMS/Plugins/IMS.Plugins.InMemory/obj/Debug/net8.0/IMS.Plugins.InMemory.dll
 /Users/princesaoud/web-dev/dotnet/IMS/Plugins/IMS.Plugins.InMemory/obj/Debug/net8.0/refint/IMS.Plugins.InMemory.dll

@@ -5,7 +5,6 @@
 /Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/CoreBusiness.AssemblyInfoInputs.cache
 /Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/CoreBusiness.AssemblyInfo.cs
 /Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/CoreBusiness.csproj.CoreCompileInputs.cache
-/Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/CoreBusiness.sourcelink.json
 /Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/CoreBusiness.dll
 /Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/refint/CoreBusiness.dll
 /Users/princesaoud/web-dev/dotnet/IMS/CoreBusiness/obj/Debug/net8.0/CoreBusiness.pdb
