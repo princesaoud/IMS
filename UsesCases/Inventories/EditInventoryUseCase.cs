@@ -14,7 +14,7 @@ public class EditInventoryUseCase : IEditInventoryUseCase
     }
 
 
-    public async void Execute(Inventory inventory)
+    public async Task Execute(Inventory inventory)
     {
 
         var inv = await inventoryRepository.Get(inventory.InventoryId);

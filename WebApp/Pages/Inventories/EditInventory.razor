@@ -3,46 +3,59 @@
 @using UsesCases.Inventories.interfaces
 
 @inject IEditInventoryUseCase EditInventoryUseCase;
-@inject NavigationManager NavigationManager;
 @inject IGetInventoryUseCase GetInventoryUseCase;
+@inject NavigationManager NavigationManager;
+
 
 <h3>Edit Inventory</h3>
-<EditForm FormName="EditInventoryForm" Model="inventory" OnValidSubmit="Edit">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-    <div class="form-group">
-        <label for="Name">Name</label>
-        <InputText id="Name" class="form-control" @bind-Value="inventory.InventoryName" />
-    </div>
-    <div class="form-group">
-        <label for="Quantity">Quantity</label>
-        <InputNumber id="Quantity" class="form-control" @bind-Value="inventory.Quantity" />
-    </div>
-    <div class="form-group">
-        <label for="Price">Price</label>
-        <InputNumber id="Price" class="form-control" @bind-Value="inventory.Price" />
-    </div>
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a href="/inventories" class="btn btn-secondary">Cancel</a>
+@if (inventory == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm FormName="EditInventoryForm" Model="inventory" OnValidSubmit="Edit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <InputText id="Name" class="form-control" @bind-Value="inventory.InventoryName" />
+        </div>
+        <div class="form-group">
+            <label for="Quantity">Quantity</label>
+            <InputNumber id="Quantity" class="form-control" @bind-Value="inventory.Quantity" />
+        </div>
+        <div class="form-group">
+            <label for="Price">Price</label>
+            <InputNumber id="Price" class="form-control" @bind-Value="inventory.Price" />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="/inventories" class="btn btn-secondary">Cancel</a>
 
-</EditForm>
+    </EditForm>
+}
+
 @code {
 
 
     [Parameter]
     public int invId { get; set; }
-    protected override async Task OnInitializedAsync()
-    {
-        inventory = await GetInventoryUseCase.Execute(invId);
-    }
-    private Inventory inventory = new Inventory();
 
-    void Edit()
+    protected override async Task OnParametersSetAsync()
+    {
+        inventory ??= await GetInventoryUseCase.Execute(invId);
+    }
+    [SupplyParameterFromForm]
+    private Inventory? inventory { get; set; }
+
+    async void Edit()
     {
         // Call the API to update the inventory
-        EditInventoryUseCase.Execute(inventory);
-        NavigationManager.NavigateTo("/inventories");
-
+        if (inventory != null)
+        {
+            await EditInventoryUseCase.Execute(inventory);
+            NavigationManager.NavigateTo("/inventories");
+        }
     }
 
 }
