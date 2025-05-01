@@ -13,12 +13,13 @@ public class AddProductUseCase : IAddProductUseCase
         _productRepository = productRepository;
     }
 
-    public void Execute(Product product)
+    public Task Execute(Product product)
     {
         if (product == null) throw new ArgumentNullException(nameof(product), "Product cannot be null.");
         if (string.IsNullOrWhiteSpace(product.Name)) throw new ArgumentException("Product name cannot be empty.", nameof(product.Name));
         if (product.Price <= 0) throw new ArgumentOutOfRangeException(nameof(product.Price), "Price must be greater than zero.");
 
         _productRepository.AddProduct(product);
+        return Task.FromResult(0);
     }
 }

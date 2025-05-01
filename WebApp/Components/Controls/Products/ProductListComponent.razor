@@ -1,0 +1,46 @@
+﻿@using CoreBusiness
+@using UsesCases.Inventories.Interfaces
+@using UsesCases.Products.interfaces
+
+@inject IViewProductsByNameUseCase ViewProductsByNameUseCase
+
+@if (products != null && products.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <ProductListItemComponent product="@product" />
+            }
+        </tbody>
+    </table>
+}
+else if (products != null && !products.Any())
+{
+    <p>No inventories found for "<strong>@searchProduct</strong>".</p>
+}
+else
+{
+    <p>Loading inventories...</p>
+}
+
+@code {
+    [Parameter]
+    public string? searchProduct { get; set; }
+
+    private List<Product>? products;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        products = await ViewProductsByNameUseCase.Execute(searchProduct ?? string.Empty);
+    }
+}

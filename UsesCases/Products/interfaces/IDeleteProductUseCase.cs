@@ -4,5 +4,5 @@ namespace UsesCases.Products.interfaces;
 
 public interface IDeleteProductUseCase
 {
-    void Execute(int id);
+    Task Execute(int id);
 }

@@ -16,9 +16,10 @@ public class EditProductUseCase : IEditProductUseCase
         _productRepository = productRepository;
     }
 
-    public void Execute(Product product)
+    public Task Execute(Product product)
     {
         if (product == null) throw new ArgumentNullException(nameof(product));
         _productRepository.UpdateProduct(product);
+        return Task.CompletedTask;
     }
 }

@@ -1,0 +1,41 @@
+﻿@page "/create-product"
+@using CoreBusiness
+@using UsesCases.Products.interfaces
+
+@inject IAddProductUseCase AddProductUseCase;
+@inject NavigationManager NavigationManager;
+
+<h3>Create Product</h3>
+<EditForm Model="product" OnValidSubmit="Create" FormName="formCreateProduct">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <InputText id="name" class="form-control" @bind-Value="product.Name" />
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price</label>
+        <InputNumber id="price" class="form-control" @bind-Value="product.Price" />
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <InputNumber id="quantity" class="form-control" @bind-Value="product.Quantity" />
+    </div>
+    <br <button type="submit" class="btn btn-primary">Create</button>
+    &nbsp;
+    <a href="/products" class="btn btn-secondary">Back</a>
+</EditForm>
+
+@code {
+
+    private Product product = new Product();
+
+    private async void Create()
+    {
+        await AddProductUseCase.Execute(product);
+        NavigationManager.NavigateTo("/products");
+    }
+
+}

@@ -17,8 +17,8 @@ public class ViewProductsByNameUseCase : IViewProductsByNameUseCase
         _productRepository = productRepository;
     }
 
-    public List<Product> Execute(string name)
+    public Task<List<Product>> Execute(string name)
     {
-        return _productRepository.GetProductsByName(name);
+        return Task.FromResult(_productRepository.GetProductsByName(name));
     }
 }

@@ -5,5 +5,5 @@ namespace UsesCases.Products.interfaces;
 
 public interface IViewProductsByNameUseCase
 {
-    List<Product> Execute(string name);
+    Task<List<Product>> Execute(string name);
 }

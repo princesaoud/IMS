@@ -5,5 +5,5 @@ namespace UsesCases.Products.interfaces;
 
 public interface IEditProductUseCase
 {
-    void Execute(Product product);
+    Task Execute(Product product);
 }

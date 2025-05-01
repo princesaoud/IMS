@@ -16,9 +16,10 @@ public class GetProductUseCase : IGetProductUseCase
         _productRepository = productRepository;
     }
 
-    public Product Execute(int id)
+    public Task<Product> Execute(int id)
     {
-        return _productRepository.GetProductById(id);
+        var data = _productRepository.GetProductById(id);
+        return Task.FromResult(data);
     }
 
 }

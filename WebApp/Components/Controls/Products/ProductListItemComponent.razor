@@ -1,0 +1,38 @@
+﻿@using CoreBusiness
+@using Microsoft.AspNetCore.Components
+@using UsesCases.Inventories
+@using UsesCases.Inventories.interfaces
+@using UsesCases.Products
+@using UsesCases.Products.interfaces
+
+
+@inject IDeleteProductUseCase DeleteProductUseCase
+@inject NavigationManager NavigationManager
+
+@if (product != null)
+{
+    <tr>
+        <td>@product.ProductId</td>
+        <td>@product.Name</td>
+        <td>@product.Quantity</td>
+        <td>@product.Price</td>
+        <td>
+            @* <button type="button" class="btn btn-light" href="/editinventory">Edit
+            </button> *@
+            <a href="/editproduct/@product.ProductId" class="btn btn-info">Edit</a>
+            <button type="button" class="btn btn-danger" @onclick="() => DeleteProduct(product.ProductId)">Delete</button>
+        </td>
+    </tr>
+}
+
+
+@code {
+    [Parameter]
+    public Product? product { get; set; }
+    private async Task DeleteProduct(int inventoryId)
+    {
+        await DeleteProductUseCase.Execute(inventoryId);
+        NavigationManager.Refresh();
+    }
+
+}
