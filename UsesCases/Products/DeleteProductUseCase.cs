@@ -16,12 +16,9 @@ public class DeleteProductUseCase : IDeleteProductUseCase
         _productRepository = productRepository;
     }
 
-    public Task Execute(int id)
+    public async Task ExecuteAsync(int id)
     {
-        if (id <= 0) throw new ArgumentOutOfRangeException(nameof(id), "Id must be greater than zero.");
-        var product = _productRepository.GetProductById(id);
-        if (product == null) throw new ArgumentNullException(nameof(product), "Product not found.");
-        _productRepository.DeleteProduct(product);
-        return Task.CompletedTask;
+        await _productRepository.DeleteProductAsync(id);
     }
+
 }

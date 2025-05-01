@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using CoreBusiness;
 using UsesCases.PluginInterfaces;
 
@@ -28,14 +29,25 @@ public class ProductRepository : IProductRepository
         _inventories.Add(product);
     }
 
-    public void DeleteProduct(Product product)
+    public void DeleteProduct(int id)
     {
-        var data = _inventories.FirstOrDefault(i => i.ProductId == product.ProductId);
+        var data = _inventories.FirstOrDefault(i => i.ProductId == id);
         if (data == null)
         {
             throw new Exception("Product not found");
         }
         _inventories.Remove(data);
+    }
+
+    public Task DeleteProductAsync(int id)
+    {
+        var product = _inventories.FirstOrDefault(x => x.ProductId == id);
+        if (product != null)
+        {
+            _inventories.Remove(product);
+            return Task.CompletedTask;
+        }
+        return Task.FromResult(false);
     }
 
     public Product GetProductById(int id)
