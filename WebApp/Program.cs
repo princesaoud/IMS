@@ -21,6 +21,7 @@ builder.Services.AddTransient<IViewInventoriesByNameUseCase, ViewInventoriesByNa
 builder.Services.AddTransient<IAddInventoryUseCase, AddInventoryUseCase>();
 builder.Services.AddTransient<IEditInventoryUseCase, EditInventoryUseCase>();
 builder.Services.AddTransient<IGetInventoryUseCase, GetInventoryUseCase>();
+builder.Services.AddTransient<IDeleteInventoryUseCase, DeleteInventoryUseCase>();
 
 
 await builder.Build().RunAsync();

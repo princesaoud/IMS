@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Db250cm9scy9JbnZlbnRvcnlMaXN0SXRlbUNvbXBvbmVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/princesaoud/web-dev/dotnet/IMS/WebApp/Components/Controls/SearchComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Db250cm9scy9TZWFyY2hDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/princesaoud/web-dev/dotnet/IMS/WebApp/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/princesaoud/web-dev/dotnet/IMS/WebApp/Pages/Inventories/CreateInventory.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52ZW50b3JpZXMvQ3JlYXRlSW52ZW50b3J5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/princesaoud/web-dev/dotnet/IMS/WebApp/Pages/Inventories/DeleteInventory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52ZW50b3JpZXMvRGVsZXRlSW52ZW50b3J5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/princesaoud/web-dev/dotnet/IMS/WebApp/Pages/Inventories/EditInventory.razor]

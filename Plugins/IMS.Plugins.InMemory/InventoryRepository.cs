@@ -37,7 +37,12 @@ namespace IMS.Plugins.InMemory
             {
                 return Task.FromResult(_inventories);
             }
-            return Task.FromResult(_inventories.Where(i => i.InventoryName.Contains(name)).ToList());
+            return Task.FromResult(
+        _inventories
+        .Where(i => i.InventoryName != null && i.InventoryName.ToLowerInvariant().Contains(name.ToLowerInvariant()))
+        .ToList()
+);
+
         }
 
 
@@ -72,6 +77,17 @@ namespace IMS.Plugins.InMemory
             data.Quantity = inventory.Quantity;
             data.Price = inventory.Price;
             await Task.CompletedTask;
+        }
+
+        public Task Delete(int id)
+        {
+            var data = _inventories.FirstOrDefault(i => i.InventoryId == id);
+            if (data == null)
+            {
+                throw new Exception("Inventory not found");
+            }
+            _inventories.Remove(data);
+            return Task.CompletedTask;
         }
     }
 

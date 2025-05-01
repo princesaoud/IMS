@@ -6,4 +6,5 @@ public interface IInventoryRepository
     public Task<List<Inventory>> GetByName(string name);
     public Task<Inventory> Get(int id);
     public Task Update(Inventory inventory);
+    public Task Delete(int id);
 }

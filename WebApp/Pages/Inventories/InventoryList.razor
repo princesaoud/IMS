@@ -1,11 +1,23 @@
+@page "/inventories"
 @using WebApp.Components.Controls
 
-@page "/inventories"
-
 <h3>Inventory List</h3>
+
+<SearchComponent></SearchComponent>
+
+<InventoryListComponent SearchInventoryFilter="@searchFilterApplied" />
+
 <NavLink class="btn btn-primary" href="/create-inventory">
     Add Inventory
 </NavLink>
 
+@code {
+    private string inventoryNameInput { get; set; } = string.Empty;
+    private string searchFilterApplied { get; set; } = string.Empty;
 
-<InventoryListComponent />
+    private void SearchInventory()
+    {
+        Console.WriteLine("Searching inventory by name: " + inventoryNameInput);
+        searchFilterApplied = inventoryNameInput;
+    }
+}

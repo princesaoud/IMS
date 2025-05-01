@@ -1,5 +1,11 @@
 @using CoreBusiness
 @using Microsoft.AspNetCore.Components
+@using UsesCases.Inventories
+@using UsesCases.Inventories.interfaces
+
+
+@inject IDeleteInventoryUseCase DeleteInventoryUseCase
+@inject NavigationManager NavigationManager
 
 @if (inventory != null)
 {
@@ -11,7 +17,9 @@
         <td>
             @* <button type="button" class="btn btn-light" href="/editinventory">Edit
             </button> *@
-            <a href="/editinventory/@inventory.InventoryId" class="btn btn-danger">Edit</a>
+            <a href="/editinventory/@inventory.InventoryId" class="btn btn-info">Edit</a>
+            <button type="button" class="btn btn-danger"
+                @onclick="() => DeleteInventory(inventory.InventoryId)">Delete</button>
         </td>
     </tr>
 }
@@ -20,6 +28,11 @@
 @code {
     [Parameter]
     public Inventory? inventory { get; set; }
+    private async Task DeleteInventory(int inventoryId)
+    {
+        await DeleteInventoryUseCase.Execute(inventoryId);
+        NavigationManager.Refresh();
 
+    }
 
 }

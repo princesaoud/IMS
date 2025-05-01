@@ -23,11 +23,23 @@
         </tbody>
     </table>
 }
+else if (inventories != null && !inventories.Any())
+{
+    <p>No inventories found for "<strong>@SearchInventoryFilter</strong>".</p>
+}
+else
+{
+    <p>Loading inventories...</p>
+}
+
 @code {
+    [Parameter]
+    public string? SearchInventoryFilter { get; set; }
+
     private IEnumerable<Inventory>? inventories;
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnParametersSetAsync()
     {
-        inventories = await ViewInventoriesByNameUseCase.Execute("");
+        inventories = await ViewInventoriesByNameUseCase.Execute(SearchInventoryFilter ?? string.Empty);
     }
 }
